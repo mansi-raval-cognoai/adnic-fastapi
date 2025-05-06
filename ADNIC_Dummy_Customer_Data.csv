@@ -1,0 +1,11 @@
+Customer Name,Phone Number,Policy Number,Policy Type,Coverage,Vehicle/Destination,Validity,Premium (AED),Status
+Ahmed Ali,6123456789,ADNIC123456,Health Insurance,Inpatient & Outpatient,N/A,01-Jan-2024 to 31-Dec-2024,5000,Active
+Fatima Hassan,7234567890,ADNIC789101,Motor Insurance,Comprehensive,Toyota Land Cruiser 2022,15-Feb-2024 to 14-Feb-2025,3200,Active
+Omar Yusuf,8345678901,ADNIC456789,Travel Insurance,Medical + Trip Cancellation,Europe,10-Mar-2024 to 20-Mar-2024,250,Expired
+Sara Khan,9456789012,ADNIC654321,Health Insurance,Inpatient Only,N/A,05-Apr-2024 to 04-Apr-2025,4500,Active
+Mohammed Zayed,1678901234,ADNIC987654,Motor Insurance,Third-Party Liability,Honda Accord 2021,20-May-2024 to 19-May-2025,2800,Active
+Layla Noor,2789012345,ADNIC112233,Travel Insurance,Medical Only,USA,01-Jun-2024 to 30-Jun-2024,180,Expired
+Hassan Ibrahim,3890123456,ADNIC445566,Health Insurance,Inpatient & Outpatient,N/A,10-Jul-2024 to 09-Jul-2025,5300,Active
+Ayesha Rahman,4901234567,ADNIC778899,Motor Insurance,Comprehensive,Ford Mustang 2023,15-Aug-2024 to 14-Aug-2025,4000,Active
+Khalid Saif,5012345678,ADNIC223344,Travel Insurance,Medical + Baggage Loss,Asia,05-Sep-2024 to 04-Oct-2024,300,Expired
+Zainab Farooq,6123457890,ADNIC556677,Health Insurance,Inpatient & Dental,N/A,25-Oct-2024 to 24-Oct-2025,5500,Active
