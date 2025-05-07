@@ -27,6 +27,7 @@ def read_csv_as_dict():
 # Endpoint to return the CSV data
 @app.get("/data")
 async def get_csv_data(mobile_number: str):
+    mobile_number = mobile_number[-9:]
     data = read_csv_as_dict()
     customer_data = data.get(mobile_number)
 
