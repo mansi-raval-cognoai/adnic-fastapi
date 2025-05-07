@@ -48,3 +48,43 @@ async def get_csv_data(mobile_number: str):
             "payload": {},
             "greeting_message": greeting
         })
+
+
+knowledge_base = [
+    {
+        "question": "When was ADNIC founded and where is its headquarters located?",
+        "answer": "ADNIC was founded in 1972 and is headquartered in Abu Dhabi, United Arab Emirates."
+    },
+    {
+        "question": "What types of insurance products and services does ADNIC offer?",
+        "answer": "ADNIC offers a wide range of insurance products including health, motor, travel, property, marine, aviation, and engineering insurance for both individuals and businesses."
+    },
+    {
+        "question": "Is ADNIC a publicly listed company, and on which stock exchange does it trade?",
+        "answer": "Yes, ADNIC is a publicly listed company and trades on the Abu Dhabi Securities Exchange (ADX) under the ticker symbol 'ADNIC'."
+    },
+    {
+        "question": "In which regions does ADNIC operate, and how extensive is its network?",
+        "answer": "ADNIC operates primarily in the UAE, but also serves the wider MENA region, with clients in Asia and Europe. It has branches and service centers across major UAE cities."
+    },
+    {
+        "question": "Who are the major shareholders or key people associated with ADNIC?",
+        "answer": "ADNIC's CEO is Charalampos Mylonas. While individual major shareholders are not publicly listed, the company is publicly traded and regulated by the Central Bank of the UAE."
+    },
+    {
+        "question": "What are the main business segments of ADNIC?",
+        "answer": "ADNIC operates in both consumer and commercial insurance segments, offering health, motor, property, engineering, marine, and specialty insurance."
+    },
+    {
+        "question": "What regions does ADNIC serve?",
+        "answer": "ADNIC primarily serves the UAE but also provides insurance solutions across the Middle East and North Africa (MENA) region, with services extending to Asia and Europe."
+    },
+    {
+        "question": "Where is ADNIC headquartered, and where are its branches located?",
+        "answer": "ADNIC is headquartered in Abu Dhabi, UAE, and has branches and service centers in Dubai, Sharjah, Al Ain, and other major UAE cities."
+    }
+]
+
+@app.get("/knowledge-base")
+async def get_knowledge_base():
+    return JSONResponse(content={"knowledge_base": knowledge_base})
