@@ -26,24 +26,29 @@ def read_csv_as_dict():
 
 # Endpoint to return the CSV data
 @app.get("/data")
-async def get_csv_data(mobile_number: str):
+async def get_csv_data(mobile_number: str, language: str):
     mobile_number = mobile_number[-10:]
+    language = language.lower()
     data = read_csv_as_dict()
     customer_data = data.get(mobile_number)
 
     if customer_data:
-        customer_name = customer_data["Customer Name"]
-        greeting = (
-            f"Hello {customer_name}! I am an ADNIC bot and I am here to assist you. I can see you have {customer_data['Policy Type']} policy and it has a validity from {customer_data['Validity']}. How may I assist you?"
-        )
+        if language == "arabic":
+            greeting = f"""مرحبًا {customer_data['Customer Name']}! أنا روبوت ADNIC هنا لمساعدتك. أرى أن لديك بوليصة {customer_data['Policy Type']} وصلاحيتها من {customer_data['Validity']}. كيف يمكنني مساعدتك؟"""
+                    
+        else:
+            greeting = f"Hello {customer_data['Customer Name']}! I am an ADNIC bot and I am here to assist you. I can see you have {customer_data['Policy Type']} policy and it has a validity from {customer_data['Validity']}. How may I assist you?"
+
         return JSONResponse(content={
             "payload": customer_data,
             "greeting_message": greeting
         })
     else:
-        greeting = (
-            "Hello there! Welocme to ADNIC. I couldn’t find any active policy linked to your number. How may I assist you?"
-        )
+        if language == "arabic":
+            greeting = "مرحبًا! لم أتمكن من العثور على أي بوليصة نشطة مرتبطة برقمك. كيف يمكنني مساعدتك؟"
+        else:
+            greeting = "Hello there! Welcome to ADNIC. I couldn’t find any active policy linked to your number. How may I assist you?"
+
         return JSONResponse(content={
             "payload": {},
             "greeting_message": greeting
