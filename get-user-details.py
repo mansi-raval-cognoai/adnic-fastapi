@@ -34,7 +34,10 @@ async def get_csv_data(mobile_number: str, language: str):
 
     if customer_data:
         if language == "arabic":
-            greeting = f"""مرحبًا {customer_data['Customer Name']}! أنا روبوت ADNIC هنا لمساعدتك. أرى أن لديك بوليصة {customer_data['Policy Type']} وصلاحيتها من {customer_data['Validity']}. كيف يمكنني مساعدتك؟"""
+             greeting = {
+                "native_script": f"""مرحبًا {customer_data['Customer Name']}! أنا روبوت ADNIC هنا لمساعدتك. أرى أن لديك بوليصة {customer_data['Policy Type']} وصلاحيتها من {customer_data['Validity']}. كيف يمكنني مساعدتك؟""",
+                "latin_script": f"""Marhaban {customer_data['Customer Name']}! Ana robot ADNIC huna limusa'adatik. Ara annaka ladayka bolisa {customer_data['Policy Type']} wa salahiyatuha min {customer_data['Validity']}. Kaifa yumkinuni musa'adatuk?"""
+            }
                     
         else:
             greeting = f"Hello {customer_data['Customer Name']}! I am an ADNIC bot and I am here to assist you. I can see you have {customer_data['Policy Type']} policy and it has a validity from {customer_data['Validity']}. How may I assist you?"
@@ -45,7 +48,10 @@ async def get_csv_data(mobile_number: str, language: str):
         })
     else:
         if language == "arabic":
-            greeting = "مرحبًا! لم أتمكن من العثور على أي بوليصة نشطة مرتبطة برقمك. كيف يمكنني مساعدتك؟"
+            greeting = {
+                "native_script": "مرحبًا! لم أتمكن من العثور على أي بوليصة نشطة مرتبطة برقمك. كيف يمكنني مساعدتك؟",
+                "latin_script": "Marhaban! Lam atamakkan min aleuthur ealaa ayyi bolisa nashita murtabita biraqmuk. Kaifa yumkinuni musa'adatuk?"
+            }
         else:
             greeting = "Hello there! Welcome to ADNIC. I couldn’t find any active policy linked to your number. How may I assist you?"
 
